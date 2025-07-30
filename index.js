@@ -12,6 +12,10 @@ app.use('', router);
 
 const DB_URI = process.env.MONGODB_URI;
 
+app.get("/", (req, res) => {
+    res.send("Backend API is working!");
+});
+
 app.listen(PORT, () => {
     mongoose.connect(DB_URI, {}).then(() => {
         console.log('Connection Established Successfully.');
